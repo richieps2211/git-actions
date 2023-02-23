@@ -1,0 +1,19 @@
+name: Prueba-Docker_devops
+
+on: push
+
+jobs:
+  node-docker:
+    runs-on: ubuntu-latest
+    container: 
+      image: node:16-alpine3.16
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+
+      # Runs a single command using the runners shell
+      - name: Log Version del nodo
+        run: |
+          node -v
+          cat /etc/os-release
